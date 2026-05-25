@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🦅 Biomecánica Matemática del Alkamari Andino (*Vanellus resplendens*)
 
 ## Desafío Final — Aves Andinas, La Paz, Bolivia
@@ -355,3 +356,6 @@ http://localhost:8000
 ---
 
 *Universidad Mayor de San Andrés — Biomecánica Matemática — La Paz, Bolivia*
+=======
+# DesafioNumericos2
+>>>>>>> 97313808172aeab218c9f73d55b43c25f38c7fa7
