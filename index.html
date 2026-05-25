@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biomecánica del Colibrí Gigante — Aves Paceñas</title>
-    <meta name="description" content="Simulación biomecánica del ciclo de aleteo del Colibrí Gigante mediante Splines Cúbicos y Análisis de Fourier.">
+    <title>Biomecánica del Cóndor Andino — Aves Paceñas</title>
+    <meta name="description"
+        content="Simulación biomecánica del ciclo de aleteo del Cóndor Andino (Alkamari) mediante Splines Cúbicos y Análisis de Fourier.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
     <!-- HERO -->
     <header id="hero-header">
@@ -17,18 +22,27 @@
         <div class="hero-content">
             <div class="hero-badge">UNIVERSIDAD MAYOR DE SAN ANDRÉS · BIOMECÁNICA MATEMÁTICA</div>
             <h1 class="hero-title">
-                <span class="hero-title-line">Colibrí Gigante</span>
-                <span class="hero-title-accent">Patagona gigas</span>
+                <span class="hero-title-line">Cóndor Andino</span>
+                <span class="hero-title-accent">Vultur gryphus</span>
             </h1>
-            <p class="hero-subtitle">Modelado del ciclo de aleteo mediante <strong>Splines Cúbicos Naturales</strong> y <strong>Transformada de Fourier</strong> — La Paz, Bolivia</p>
+            <p class="hero-subtitle">Modelado del ciclo de aleteo mediante <strong>Splines Cúbicos Naturales</strong> y
+                <strong>Transformada de Fourier</strong> — La Paz, Bolivia
+            </p>
             <div class="hero-stats">
-                <div class="stat-card"><span class="stat-value" id="stat-freq">—</span><span class="stat-label">Frecuencia (Hz)</span></div>
-                <div class="stat-card"><span class="stat-value" id="stat-points">—</span><span class="stat-label">Puntos de control</span></div>
-                <div class="stat-card"><span class="stat-value" id="stat-splines">—</span><span class="stat-label">Segmentos Spline</span></div>
-                <div class="stat-card"><span class="stat-value" id="stat-engine">—</span><span class="stat-label">Motor de Cálculo</span></div>
+                <div class="stat-card"><span class="stat-value" id="stat-freq">—</span><span
+                        class="stat-label">Frecuencia (Hz)</span></div>
+                <div class="stat-card"><span class="stat-value" id="stat-points">—</span><span class="stat-label">Puntos
+                        de control</span></div>
+                <div class="stat-card"><span class="stat-value" id="stat-splines">—</span><span
+                        class="stat-label">Segmentos Spline</span></div>
+                <div class="stat-card"><span class="stat-value" id="stat-engine">—</span><span class="stat-label">Motor
+                        de Cálculo</span></div>
             </div>
-            <button class="hero-cta" id="btn-start" onclick="document.getElementById('section-simulation').scrollIntoView({behavior:'smooth'})">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <button class="hero-cta" id="btn-start"
+                onclick="document.getElementById('section-simulation').scrollIntoView({behavior:'smooth'})">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                </svg>
                 Iniciar Simulación
             </button>
         </div>
@@ -40,7 +54,8 @@
             <div class="section-header">
                 <span class="section-number">01</span>
                 <h2 class="section-title">Simulación del Aleteo</h2>
-                <p class="section-desc">Animación cinemática interactiva con paneles de control y telemetría en tiempo real</p>
+                <p class="section-desc">Animación cinemática interactiva con paneles de control y telemetría en tiempo
+                    real</p>
             </div>
             <div class="sim-three-col">
                 <!-- LEFT PANEL -->
@@ -50,22 +65,22 @@
                         <div class="sp-control">
                             <label>Frecuencia de aleteo</label>
                             <div class="slider-row">
-                                <input type="range" id="ctrl-freq" min="5" max="30" step="0.5" value="13">
-                                <span class="slider-val" id="val-freq">13 Hz</span>
+                                <input type="range" id="ctrl-freq" min="0.8" max="2.5" step="0.01" value="1.2">
+                                <span class="slider-val" id="val-freq">1.2 Hz</span>
                             </div>
                         </div>
                         <div class="sp-control">
                             <label>Amplitud angular</label>
                             <div class="slider-row">
-                                <input type="range" id="ctrl-amp" min="15" max="80" step="1" value="55">
-                                <span class="slider-val" id="val-amp">±55°</span>
+                                <input type="range" id="ctrl-amp" min="60" max="140" step="1" value="120">
+                                <span class="slider-val" id="val-amp">±120°</span>
                             </div>
                         </div>
                         <div class="sp-control">
                             <label>Longitud del ala</label>
                             <div class="slider-row">
-                                <input type="range" id="ctrl-wing-len" min="60" max="200" step="5" value="130">
-                                <span class="slider-val" id="val-wing-len">130 px</span>
+                                <input type="range" id="ctrl-wing-len" min="180" max="300" step="5" value="220">
+                                <span class="slider-val" id="val-wing-len">220 px</span>
                             </div>
                         </div>
                         <div class="sp-control">
@@ -78,20 +93,25 @@
                     </div>
                     <div class="sp-section">
                         <h3 class="sp-title">🎨 Visualización</h3>
-                        <label class="toggle-row"><input type="checkbox" id="chk-ghost" checked><span>Estela fantasma</span></label>
-                        <label class="toggle-row"><input type="checkbox" id="chk-ctrl-pts" checked><span>Puntos de control</span></label>
-                        <label class="toggle-row"><input type="checkbox" id="chk-angle-arc" checked><span>Arco angular</span></label>
-                        <label class="toggle-row"><input type="checkbox" id="chk-particles" checked><span>Partículas</span></label>
-                        <label class="toggle-row"><input type="checkbox" id="chk-feathers" checked><span>Detalle plumas</span></label>
+                        <label class="toggle-row"><input type="checkbox" id="chk-ghost" checked><span>Estela
+                                fantasma</span></label>
+                        <label class="toggle-row"><input type="checkbox" id="chk-ctrl-pts" checked><span>Puntos de
+                                control</span></label>
+                        <label class="toggle-row"><input type="checkbox" id="chk-angle-arc" checked><span>Arco
+                                angular</span></label>
+                        <label class="toggle-row"><input type="checkbox" id="chk-particles"
+                                checked><span>Partículas</span></label>
+                        <label class="toggle-row"><input type="checkbox" id="chk-feathers" checked><span>Detalle
+                                plumas</span></label>
                     </div>
                     <div class="sp-section">
                         <h3 class="sp-title">🐦 Especie</h3>
                         <div class="bio-mini">
-                            <div class="bio-mini-row"><span>Nombre</span><strong>Colibrí Gigante</strong></div>
-                            <div class="bio-mini-row"><span>Científico</span><strong><em>P. gigas</em></strong></div>
-                            <div class="bio-mini-row"><span>Familia</span><strong>Trochilidae</strong></div>
-                            <div class="bio-mini-row"><span>Tamaño</span><strong>21–23 cm</strong></div>
-                            <div class="bio-mini-row"><span>Hábitat</span><strong>La Paz 3600m</strong></div>
+                            <div class="bio-mini-row"><span>Nombre</span><strong>Cóndor Andino</strong></div>
+                            <div class="bio-mini-row"><span>Científico</span><strong><em>V. gryphus</em></strong></div>
+                            <div class="bio-mini-row"><span>Familia</span><strong>Cathartidae</strong></div>
+                            <div class="bio-mini-row"><span>Tamaño</span><strong>100–130 cm</strong></div>
+                            <div class="bio-mini-row"><span>Hábitat</span><strong>Andes, La Paz</strong></div>
                         </div>
                     </div>
                 </aside>
@@ -100,14 +120,26 @@
                 <div class="sim-center">
                     <div class="sim-panel sim-panel-main">
                         <div class="panel-header">
-                            <div class="panel-title"><div class="panel-dot live"></div>Animación en Tiempo Real</div>
+                            <div class="panel-title">
+                                <div class="panel-dot live"></div>Animación en Tiempo Real
+                            </div>
                             <div class="panel-controls">
                                 <button class="ctrl-btn" id="btn-play" title="Play/Pause">
-                                    <svg id="icon-play" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                                    <svg id="icon-pause" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+                                    <svg id="icon-play" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <polygon points="5 3 19 12 5 21 5 3" />
+                                    </svg>
+                                    <svg id="icon-pause" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"
+                                        style="display:none">
+                                        <rect x="6" y="4" width="4" height="16" />
+                                        <rect x="14" y="4" width="4" height="16" />
+                                    </svg>
                                 </button>
                                 <button class="ctrl-btn" id="btn-reset" title="Reset">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <polyline points="1 4 1 10 7 10" />
+                                        <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
+                                    </svg>
                                 </button>
                             </div>
                         </div>
@@ -126,21 +158,31 @@
                     <div class="sp-section">
                         <h3 class="sp-title">📊 Telemetría</h3>
                         <div class="telem-grid">
-                            <div class="telem-item"><span class="telem-label">Ángulo actual</span><span class="telem-value" id="telem-angle">0.0°</span></div>
-                            <div class="telem-item"><span class="telem-label">Velocidad angular</span><span class="telem-value" id="telem-vel">0.0 °/s</span></div>
-                            <div class="telem-item"><span class="telem-label">Aceleración</span><span class="telem-value" id="telem-acc">0.0 °/s²</span></div>
-                            <div class="telem-item"><span class="telem-label">Fase</span><span class="telem-value" id="telem-phase">—</span></div>
-                            <div class="telem-item"><span class="telem-label">Período</span><span class="telem-value" id="telem-period">—</span></div>
-                            <div class="telem-item"><span class="telem-label">Energía cinética</span><span class="telem-value" id="telem-energy">—</span></div>
+                            <div class="telem-item"><span class="telem-label">Ángulo actual</span><span
+                                    class="telem-value" id="telem-angle">0.0°</span></div>
+                            <div class="telem-item"><span class="telem-label">Velocidad angular</span><span
+                                    class="telem-value" id="telem-vel">0.0 °/s</span></div>
+                            <div class="telem-item"><span class="telem-label">Aceleración</span><span
+                                    class="telem-value" id="telem-acc">0.0 °/s²</span></div>
+                            <div class="telem-item"><span class="telem-label">Fase</span><span class="telem-value"
+                                    id="telem-phase">—</span></div>
+                            <div class="telem-item"><span class="telem-label">Período</span><span class="telem-value"
+                                    id="telem-period">—</span></div>
+                            <div class="telem-item"><span class="telem-label">Energía cinética</span><span
+                                    class="telem-value" id="telem-energy">—</span></div>
                         </div>
                     </div>
                     <div class="sp-section">
                         <h3 class="sp-title">📐 Fourier Resumen</h3>
                         <div class="telem-grid">
-                            <div class="telem-item"><span class="telem-label">Freq. fundamental</span><span class="telem-value accent" id="rt-fourier-freq">—</span></div>
-                            <div class="telem-item"><span class="telem-label">Período</span><span class="telem-value" id="rt-fourier-period">—</span></div>
-                            <div class="telem-item"><span class="telem-label">Rango biológico</span><span class="telem-value" id="rt-bio-range">12–15 Hz</span></div>
-                            <div class="telem-item"><span class="telem-label">Validación</span><span class="telem-value" id="rt-bio-match">—</span></div>
+                            <div class="telem-item"><span class="telem-label">Freq. fundamental</span><span
+                                    class="telem-value accent" id="rt-fourier-freq">—</span></div>
+                            <div class="telem-item"><span class="telem-label">Período</span><span class="telem-value"
+                                    id="rt-fourier-period">—</span></div>
+                            <div class="telem-item"><span class="telem-label">Rango biológico</span><span
+                                    class="telem-value" id="rt-bio-range">0.8–2.5 Hz</span></div>
+                            <div class="telem-item"><span class="telem-label">Validación</span><span class="telem-value"
+                                    id="rt-bio-match">—</span></div>
                         </div>
                     </div>
                     <div class="sp-section">
@@ -173,14 +215,17 @@
                         </div>
                     </div>
                     <canvas id="canvas-spline" width="800" height="450"></canvas>
-                    <div class="canvas-hint">💡 Haz clic y arrastra los puntos amarillos para modificar la curva en tiempo real</div>
+                    <div class="canvas-hint">💡 Haz clic y arrastra los puntos amarillos para modificar la curva en
+                        tiempo real</div>
                 </div>
                 <div class="sim-panel">
                     <div class="panel-header">
                         <div class="panel-title">Derivadas — Velocidad y Aceleración</div>
                         <div class="panel-controls">
-                            <span class="legend-item"><span class="legend-dot" style="background:#34d399"></span>S'(t) Velocidad</span>
-                            <span class="legend-item"><span class="legend-dot" style="background:#fb7185"></span>S''(t) Aceleración</span>
+                            <span class="legend-item"><span class="legend-dot" style="background:#34d399"></span>S'(t)
+                                Velocidad</span>
+                            <span class="legend-item"><span class="legend-dot" style="background:#fb7185"></span>S''(t)
+                                Aceleración</span>
                         </div>
                     </div>
                     <canvas id="canvas-derivatives" width="800" height="450"></canvas>
@@ -188,11 +233,22 @@
             </div>
             <div class="sim-panel table-panel">
                 <div class="panel-header">
-                    <div class="panel-title">Coeficientes S<sub>i</sub>(x) = a<sub>i</sub> + b<sub>i</sub>(x−x<sub>i</sub>) + c<sub>i</sub>(x−x<sub>i</sub>)² + d<sub>i</sub>(x−x<sub>i</sub>)³</div>
+                    <div class="panel-title">Coeficientes S<sub>i</sub>(x) = a<sub>i</sub> +
+                        b<sub>i</sub>(x−x<sub>i</sub>) + c<sub>i</sub>(x−x<sub>i</sub>)² +
+                        d<sub>i</sub>(x−x<sub>i</sub>)³</div>
                 </div>
                 <div class="table-scroll">
                     <table id="table-coefficients">
-                        <thead><tr><th>Segmento</th><th>Intervalo</th><th>a<sub>i</sub></th><th>b<sub>i</sub></th><th>c<sub>i</sub></th><th>d<sub>i</sub></th></tr></thead>
+                        <thead>
+                            <tr>
+                                <th>Segmento</th>
+                                <th>Intervalo</th>
+                                <th>a<sub>i</sub></th>
+                                <th>b<sub>i</sub></th>
+                                <th>c<sub>i</sub></th>
+                                <th>d<sub>i</sub></th>
+                            </tr>
+                        </thead>
                         <tbody id="tbody-coefficients"></tbody>
                     </table>
                 </div>
@@ -204,34 +260,59 @@
             <div class="section-header">
                 <span class="section-number">03</span>
                 <h2 class="section-title">Análisis de Fourier</h2>
-                <p class="section-desc">Transformada Discreta de Fourier aplicada al desplazamiento vertical de la punta del ala</p>
+                <p class="section-desc">Transformada Discreta de Fourier aplicada al desplazamiento vertical de la punta
+                    del ala</p>
             </div>
             <div class="fourier-grid">
                 <div class="sim-panel">
-                    <div class="panel-header"><div class="panel-title">Señal Temporal — Punta del Ala</div></div>
+                    <div class="panel-header">
+                        <div class="panel-title">Señal Temporal — Punta del Ala</div>
+                    </div>
                     <canvas id="canvas-signal" width="800" height="350"></canvas>
                 </div>
                 <div class="sim-panel">
-                    <div class="panel-header"><div class="panel-title">Espectro de Frecuencia — |F(ω)|</div></div>
+                    <div class="panel-header">
+                        <div class="panel-title">Espectro de Frecuencia — |F(ω)|</div>
+                    </div>
                     <canvas id="canvas-spectrum" width="800" height="350"></canvas>
                 </div>
             </div>
             <div class="fourier-results">
                 <div class="result-card">
-                    <div class="result-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-                    <div class="result-data"><span class="result-value" id="fourier-freq">—</span><span class="result-label">Frecuencia Fundamental</span></div>
+                    <div class="result-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                        </svg></div>
+                    <div class="result-data"><span class="result-value" id="fourier-freq">—</span><span
+                            class="result-label">Frecuencia Fundamental</span></div>
                 </div>
                 <div class="result-card">
-                    <div class="result-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-                    <div class="result-data"><span class="result-value" id="fourier-period">—</span><span class="result-label">Período del Ciclo</span></div>
+                    <div class="result-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg></div>
+                    <div class="result-data"><span class="result-value" id="fourier-period">—</span><span
+                            class="result-label">Período del Ciclo</span></div>
                 </div>
                 <div class="result-card">
-                    <div class="result-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
-                    <div class="result-data"><span class="result-value" id="fourier-bio">~12–15 Hz</span><span class="result-label">Rango Biológico Real</span></div>
+                    <div class="result-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                            <path d="M2 17l10 5 10-5" />
+                            <path d="M2 12l10 5 10-5" />
+                        </svg></div>
+                    <div class="result-data"><span class="result-value" id="fourier-bio">0.8–2.5 Hz</span><span
+                            class="result-label">Rango Biológico Real</span></div>
                 </div>
                 <div class="result-card">
-                    <div class="result-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-                    <div class="result-data"><span class="result-value" id="fourier-match">—</span><span class="result-label">Validación Biológica</span></div>
+                    <div class="result-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg></div>
+                    <div class="result-data"><span class="result-value" id="fourier-match">—</span><span
+                            class="result-label">Validación Biológica</span></div>
                 </div>
             </div>
         </section>
@@ -241,33 +322,50 @@
             <div class="section-header">
                 <span class="section-number">04</span>
                 <h2 class="section-title">Ficha Biológica</h2>
-                <p class="section-desc">Contexto etológico y ecológico del Colibrí Gigante en la ciudad de La Paz</p>
+                <p class="section-desc">Contexto etológico y ecológico del Cóndor Andino en la región paceña</p>
             </div>
             <div class="bio-grid">
-                <div class="bio-card"><div class="bio-card-header"><h3>Taxonomía</h3></div><div class="bio-card-body">
-                    <div class="bio-row"><span>Nombre común</span><strong>Colibrí Gigante</strong></div>
-                    <div class="bio-row"><span>Nombre científico</span><strong><em>Patagona gigas</em></strong></div>
-                    <div class="bio-row"><span>Familia</span><strong>Trochilidae</strong></div>
-                    <div class="bio-row"><span>Orden</span><strong>Apodiformes</strong></div>
-                    <div class="bio-row"><span>Tamaño</span><strong>21–23 cm</strong></div>
-                    <div class="bio-row"><span>Peso</span><strong>18–24 g</strong></div>
-                </div></div>
-                <div class="bio-card"><div class="bio-card-header"><h3>Biomecánica de Vuelo</h3></div><div class="bio-card-body">
-                    <div class="bio-row"><span>Frecuencia de aleteo</span><strong>12–15 Hz</strong></div>
-                    <div class="bio-row"><span>Envergadura</span><strong>~21 cm</strong></div>
-                    <div class="bio-row"><span>Tipo de vuelo</span><strong>Sustentación + Cernido</strong></div>
-                    <div class="bio-row"><span>Velocidad máx.</span><strong>~50 km/h</strong></div>
-                    <div class="bio-row"><span>Ángulo de aleteo</span><strong>±60°</strong></div>
-                    <div class="bio-row"><span>Patrón</span><strong>Figura de 8 invertida</strong></div>
-                </div></div>
-                <div class="bio-card"><div class="bio-card-header"><h3>Hábitat Paceño</h3></div><div class="bio-card-body">
-                    <div class="bio-row"><span>Altitud</span><strong>2,500–4,200 msnm</strong></div>
-                    <div class="bio-row"><span>Distribución</span><strong>Valles interandinos</strong></div>
-                    <div class="bio-row"><span>Zonas urbanas</span><strong>Jardines, parques</strong></div>
-                    <div class="bio-row"><span>Alimentación</span><strong>Néctar, insectos</strong></div>
-                    <div class="bio-row"><span>Estado</span><strong>Preocupación menor</strong></div>
-                    <div class="bio-row"><span>Zona La Paz</span><strong>Mallasa, Cota Cota</strong></div>
-                </div></div>
+                <div class="bio-card">
+                    <div class="bio-card-header">
+                        <h3>Taxonomía</h3>
+                    </div>
+                    <div class="bio-card-body">
+                        <div class="bio-row"><span>Nombre común</span><strong>Cóndor Andino</strong></div>
+                        <div class="bio-row"><span>Nombre científico</span><strong><em>Vultur gryphus</em></strong>
+                        </div>
+                        <div class="bio-row"><span>Familia</span><strong>Cathartidae</strong></div>
+                        <div class="bio-row"><span>Orden</span><strong>Cathartiformes</strong></div>
+                        <div class="bio-row"><span>Tamaño</span><strong>100–130 cm</strong></div>
+                        <div class="bio-row"><span>Peso</span><strong>8–15 kg</strong></div>
+                    </div>
+                </div>
+                <div class="bio-card">
+                    <div class="bio-card-header">
+                        <h3>Biomecánica de Vuelo</h3>
+                    </div>
+                    <div class="bio-card-body">
+                        <div class="bio-row"><span>Frecuencia de aleteo</span><strong>0.8–2.5 Hz</strong></div>
+                        <div class="bio-row"><span>Envergadura</span><strong>~3 m</strong></div>
+                        <div class="bio-row"><span>Tipo de vuelo</span><strong>Planeo + Aleteo</strong></div>
+                        <div class="bio-row"><span>Velocidad máx.</span><strong>~70 km/h</strong></div>
+                        <div class="bio-row"><span>Ángulo de aleteo</span><strong>±120°</strong></div>
+                        <div class="bio-row"><span>Patrón</span><strong>Amplio y lento</strong></div>
+                    </div>
+                </div>
+                <div class="bio-card">
+                    <div class="bio-card-header">
+                        <h3>Hábitat Paceño</h3>
+                    </div>
+                    <div class="bio-card-body">
+                        <div class="bio-row"><span>Altitud</span><strong>3,000–5,000 msnm</strong></div>
+                        <div class="bio-row"><span>Distribución</span><strong>Cordillera de los Andes</strong></div>
+                        <div class="bio-row"><span>Zonas urbanas</span><strong>Avistamientos ocasionales</strong></div>
+                        <div class="bio-row"><span>Alimentación</span><strong>Carrona</strong></div>
+                        <div class="bio-row"><span>Estado</span><strong>Vulnerable</strong></div>
+                        <div class="bio-row"><span>Zona La Paz</span><strong>Valle de Zongo, Cordillera Real</strong>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -275,7 +373,8 @@
     <footer id="main-footer">
         <div class="footer-content">
             <p>Biomecánica Matemática de las Aves Paceñas — Desafío Final</p>
-            <p class="footer-sub">Splines Cúbicos · Transformada de Fourier · Colibrí Gigante (<em>Patagona gigas</em>)</p>
+            <p class="footer-sub">Splines Cúbicos · Transformada de Fourier · Cóndor Andino (<em>Vultur gryphus</em>)
+            </p>
         </div>
     </footer>
 
@@ -284,4 +383,5 @@
     <script src="simulation.js"></script>
     <script src="app.js"></script>
 </body>
+
 </html>
